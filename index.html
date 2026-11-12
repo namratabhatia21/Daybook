@@ -410,6 +410,7 @@ button.tag:hover{border-color:#fff;color:#fff}
 .swrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
 .swrow .label{width:100%;margin:0}
 .swatch{width:34px;height:34px;border:2px solid #000;box-shadow:inset 2px 2px 0 rgba(255,255,255,.25),inset -2px -2px 0 rgba(0,0,0,.35);padding:0}
+.swatch.none{background:linear-gradient(135deg,transparent 44%,#C0392B 44%,#C0392B 56%,transparent 56%),#2A2620!important}
 .swatch[aria-pressed="true"]{outline:3px solid var(--yellow);outline-offset:1px}
 
 /* TASKS */
@@ -682,7 +683,7 @@ details.done[open] summary .gtitle::before{content:"▼"}
   </section>
 
   <!-- ACHIEVEMENTS -->
-  <section id="panel-bishop" role="region" aria-label="Bishop's weight" class="narrow stack" hidden>
+  <section id="panel-mochi" role="region" aria-label="Mochi's weight" class="narrow stack" hidden>
     <div class="panel" id="petLog"></div>
     <div class="panel" id="petChartCard"></div>
   </section>
@@ -835,7 +836,7 @@ details.done[open] summary .gtitle::before{content:"▼"}
 </div>
 
 <div class="pop tooltip" id="pop" role="dialog" aria-label="Options" hidden></div>
-<footer class="credits" id="credits">Daybook demo · AI by <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude</a> (<span id="creditModel">offline mode</span>) · <a href="https://github.com/namratabhatia21/Daybook" target="_blank" rel="noopener">Source on GitHub</a></footer>
+<footer class="credits" id="credits">Daybook demo · AI by <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude</a> (<span id="creditModel">offline mode</span>)</footer>
 <div class="toast tooltip" id="toast" role="status" aria-live="polite" hidden></div>
 <div id="achLayer" aria-live="polite"></div>
 
@@ -1081,13 +1082,13 @@ const SPR = {
   head: { g: ['hhhhhhhh', 'hhhhhhhh', 'hsssssss', 'ssssssss', 'swkssswk', 'ssssssss', 'ssmmmmss', 'ssssssss'], p: { h: '#4A2E1A', s: '#E0AC7E', w: '#FFFFFF', k: '#3B4AA0', m: '#8C4B3A' } },
   sword: { g: ['......ww', '.....wWw', '....wWw.', '...wWw..', 'b.wWw...', '.bbw....', '.bbb....', 'b..b....'], p: { w: '#9CE8E0', W: '#E8FFFF', b: '#6B4A2A' } },
   bell: { g: ['...yy...', '..yYYy..', '.yYyyyy.', '.yYyyyy.', '.yyyyyy.', 'yyyyyyyy', '...kk...'], p: { y: '#E8B83A', Y: '#FFF09A', k: '#3A2A00' } },
-  bishop: { g: ['.k.k..........', 'kkkkk.........', 'kGkGkkkkkkkkk.', 'kwpwkkkkkkkkkk', '.www.wwkkkkk.k', '..ww..ww..ww.k'], p: { k: '#141414', G: '#8BD13A', p: '#F2A0B0', w: '#F4F4F4' } },
-  catwalk1: { g: ['k........k.k', 'k........kkk', '.k.kkkkkkkGk', '..kkkkkkkkkp', '..kwwwwwwkk.', '..k.k..k.k..', '..w.w..w.w..'], p: { k: '#141414', G: '#8BD13A', p: '#F2A0B0', w: '#F4F4F4' } },
-  catwalk2: { g: ['k........k.k', 'k........kkk', '.k.kkkkkkkGk', '..kkkkkkkkkp', '..kwwwwwwkk.', '...k.k.k.k..', '...w.w.w.w..'], p: { k: '#141414', G: '#8BD13A', p: '#F2A0B0', w: '#F4F4F4' } },
-  catsit: { g: ['k.....k.', 'kk...kk.', 'kkkkkkk.', 'kGkkkGk.', 'kkkpkkk.', '.kwwwk..', '.kwwwk.k', 'kkwwwkkk', 'kw.k.wk.'], p: { k: '#141414', G: '#8BD13A', p: '#F2A0B0', w: '#F4F4F4' } },
-  catjump: { g: ['k........k.k', '.kkkkkkkkkkk', '..kkkkkkkkGk', '.k.wwwww.kkp', 'k.........k.'], p: { k: '#141414', G: '#8BD13A', p: '#F2A0B0', w: '#F4F4F4' } },
-  teddy: { g: ['..WW.......WWW..', '..WWW.....WWWWW.', '...WWW....WWkWWk', '...WWWWWWWWeWWW.', '..WWWWWWWWWeeW..', '..WWWWWWWWWWe...', '..WWWWWWWWWWW...', '..WsWWWWWWsWW...', '..WsWWWWWWsWW...', '..sss.....sss...'], p: { W: '#F6F6F6', s: '#D4D4DA', e: '#E2E2E8', k: '#141414' } },
-  whiskey: { g: ['..WW.......WWW..', '..WWW.....WWWWW.', '...WWW....WWkWWk', '...WWttWWWWeWWW.', '..WWWtWWWWWeeW..', '..WWWWWWtWWWe...', '..WWWWWWttWWW...', '..WsWWWWWWsWW...', '..WsWWWWWWsWW...', '..sss.....sss...'], p: { W: '#F6F6F6', s: '#D4D4DA', e: '#B8743A', t: '#B8743A', k: '#141414' } },
+  mochi: { g: ['.k.k..........', 'kkkkk.........', 'kGkGkkkkkkkkk.', 'kwpwkkkkkkkkkk', '.www.wwkkkkk.k', '..ww..ww..ww.k'], p: { k: '#D9822B', G: '#3A8F2A', p: '#F2A0B0', w: '#F6E3C6' } },
+  catwalk1: { g: ['k........k.k', 'k........kkk', '.k.kkkkkkkGk', '..kkkkkkkkkp', '..kwwwwwwkk.', '..k.k..k.k..', '..w.w..w.w..'], p: { k: '#D9822B', G: '#3A8F2A', p: '#F2A0B0', w: '#F6E3C6' } },
+  catwalk2: { g: ['k........k.k', 'k........kkk', '.k.kkkkkkkGk', '..kkkkkkkkkp', '..kwwwwwwkk.', '...k.k.k.k..', '...w.w.w.w..'], p: { k: '#D9822B', G: '#3A8F2A', p: '#F2A0B0', w: '#F6E3C6' } },
+  catsit: { g: ['k.....k.', 'kk...kk.', 'kkkkkkk.', 'kGkkkGk.', 'kkkpkkk.', '.kwwwk..', '.kwwwk.k', 'kkwwwkkk', 'kw.k.wk.'], p: { k: '#D9822B', G: '#3A8F2A', p: '#F2A0B0', w: '#F6E3C6' } },
+  catjump: { g: ['k........k.k', '.kkkkkkkkkkk', '..kkkkkkkkGk', '.k.wwwww.kkp', 'k.........k.'], p: { k: '#D9822B', G: '#3A8F2A', p: '#F2A0B0', w: '#F6E3C6' } },
+  biscuit: { g: ['..WW.......WWW..', '..WWW.....WWWWW.', '...WWW....WWkWWk', '...WWWWWWWWeWWW.', '..WWWWWWWWWeeW..', '..WWWWWWWWWWe...', '..WWWWWWWWWWW...', '..WsWWWWWWsWW...', '..WsWWWWWWsWW...', '..sss.....sss...'], p: { W: '#E3B566', s: '#C99A4B', e: '#B98339', k: '#141414' } },
+  maple: { g: ['..WW.......WWW..', '..WWW.....WWWWW.', '...WWW....WWkWWk', '...WWttWWWWeWWW.', '..WWWtWWWWWeeW..', '..WWWWWWtWWWe...', '..WWWWWWttWWW...', '..WsWWWWWWsWW...', '..WsWWWWWWsWW...', '..sss.....sss...'], p: { W: '#9A9AA6', s: '#7E7E8A', e: '#55555F', t: '#55555F', k: '#141414' } },
   crop0: { g: ['............', '............', '............', '............', '............', '............', '............', '............', '...k....k...', '.....k......', 'ffFfffFfffFf', 'FFFFFFFFFFFF'], p: { k: '#E8D9A0', f: '#5C3D22', F: '#3E2914' } },
   crop1: { g: ['............', '............', '............', '............', '............', '............', '.....Gg.....', '....G.g.....', '......g.....', '......g.....', 'ffFfffgfffFf', 'FFFFFFFFFFFF'], p: { G: '#8BE04A', g: '#4E9E2A', f: '#5C3D22', F: '#3E2914' } },
   crop2: { g: ['............', '............', '............', '......G.....', '....GGg.....', '.....Gg.gg..', '......gGG...', '..gg..g.....', '...gG.g.....', '.....Gg.....', 'ffFfffgfffFf', 'FFFFFFFFFFFF'], p: { G: '#8BE04A', g: '#4E9E2A', f: '#5C3D22', F: '#3E2914' } },
@@ -1133,11 +1134,12 @@ function initTextures() {
 }
 
 /* ================= your character ================= */
-const AV_DEFAULT = { skin: '#D29A72', hair: '#2A1A12', frame: '#2B2B2B', top: '#C8323A' };
+const AV_DEFAULT = { skin: '#E2B08A', hair: '#5A3A22', frame: 'none', top: '#3D78D2', style: 'short' };
+const AV_STYLES = [['short', 'Short'], ['long', 'Long'], ['curly', 'Curly'], ['bun', 'Bun']];
 const AV_OPTS = {
   skin: [['#F3D1B5', 'Light'], ['#E2B08A', 'Light-medium'], ['#D29A72', 'Warm medium'], ['#B07A52', 'Medium-deep'], ['#6A4329', 'Deep']],
   hair: [['#2A1A12', 'Dark brown'], ['#141010', 'Black'], ['#5A3A22', 'Brown'], ['#8A5A2B', 'Light brown'], ['#6A1F2B', 'Burgundy']],
-  frame: [['#2B2B2B', 'Black'], ['#8A6A3A', 'Tortoise'], ['#C9A227', 'Gold'], ['#B9B9C4', 'Silver'], ['#7A3A9A', 'Purple']],
+  frame: [['none', 'No glasses'], ['#2B2B2B', 'Black'], ['#8A6A3A', 'Tortoise'], ['#C9A227', 'Gold'], ['#B9B9C4', 'Silver'], ['#7A3A9A', 'Purple']],
   top: [['#C8323A', 'Red jacket'], ['#3D78D2', 'Blue jacket'], ['#2F7A4A', 'Green jacket'], ['#6A4A9A', 'Purple jacket'], ['#D8862B', 'Orange jacket']]
 };
 const avatar = () => ({ ...AV_DEFAULT, ...(S.settings.avatar || {}) });
@@ -1145,9 +1147,11 @@ function shade(hex, k) {
   const n = parseInt(hex.slice(1), 16), c = [n >> 16, (n >> 8) & 255, n & 255];
   return '#' + c.map(v => clamp(Math.round(k < 1 ? v * k : v + (255 - v) * (k - 1)), 0, 255).toString(16).padStart(2, '0')).join('');
 }
-/* A 36px-tall pixel girl: long voluminous curly hair parted in the middle, thin round specs,
-   red puffer jacket with a striped scarf, and a small body. f (0..1) sets how full her body is. */
+/* A 36px-tall pixel person: a choice of hair style and colour, optional round glasses,
+   a jacket and jeans. f (0..1) sets how full the body is. */
 const HAIR_HALF = [5, 7, 8, 9, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 10, 10, 9, 8, 7];
+const LONG_HALF = [5, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7];
+const SHORT_HALF = [4, 6, 7, 7, 7, 7, 7, 7, 6, 6];
 function drawAvatar(g, cx, foot, f, opt = {}) {
   const A = opt.av || avatar(), mono = opt.mono || null, up = opt.bob ? 1 : 0;
   const P = (x, y, w, hh, c, body) => { g.fillStyle = mono || c; g.fillRect(cx + x, foot - 36 + y + (body ? up : 0), w, hh); };
@@ -1157,13 +1161,21 @@ function drawAvatar(g, cx, foot, f, opt = {}) {
   const tw = 2 * Math.round(3 + f * 3), hw = tw + (f > 0.5 ? 2 : 0), lw = 2 + Math.round(f * 2), aw = 2 + (f > 0.6 ? 1 : 0);
   const skin = A.skin, skinD = shade(skin, 0.82), hair = A.hair, hairL = shade(hair, 1.45), hairD = shade(hair, 0.7);
   const jk = A.top, jkD = shade(jk, 0.74), jkL = shade(jk, 1.25), jeans = '#2E3E66', jeansD = '#1F2B4A';
-  // hair, back layer: a big curly silhouette with a scalloped edge that falls past the shoulders
-  const EDGE = [0, 1, 1, 0, -1, 0, 1, 1, 0, -1, 0, 1];
-  const curl = (x, y) => ((x + 40) * 3 + y * 2) % 7 === 0 ? hairL : ((x + 40) + y * 3) % 9 === 0 ? hairD : hair;
-  HAIR_HALF.forEach((half, y) => {
-    const el = y > 2 ? EDGE[y % EDGE.length] : 0, er = y > 2 ? EDGE[(y + 3) % EDGE.length] : 0;
-    for (let x = -half - el; x < half + er; x++) P(x, y, 1, 1, curl(x, y), 1);
-  });
+  const style = AV_STYLES.some(([k]) => k === A.style) ? A.style : 'short';
+  // hair, back layer
+  if (style === 'curly') {
+    const EDGE = [0, 1, 1, 0, -1, 0, 1, 1, 0, -1, 0, 1];
+    const curl = (x, y) => ((x + 40) * 3 + y * 2) % 7 === 0 ? hairL : ((x + 40) + y * 3) % 9 === 0 ? hairD : hair;
+    HAIR_HALF.forEach((half, y) => {
+      const el = y > 2 ? EDGE[y % EDGE.length] : 0, er = y > 2 ? EDGE[(y + 3) % EDGE.length] : 0;
+      for (let x = -half - el; x < half + er; x++) P(x, y, 1, 1, curl(x, y), 1);
+    });
+  } else if (style === 'long') {
+    LONG_HALF.forEach((half, y) => { P(-half, y, half * 2, 1, hair, 1); if (y > 1 && y < 12) P(-half + 2, y, 1, 1, hairL, 1); });
+  } else {
+    SHORT_HALF.forEach((half, y) => { P(-half, y, half * 2, 1, hair, 1); if (y > 0 && y < 4) P(-half + 2, y, 2, 1, hairL, 1); });
+    if (style === 'bun') { P(-3, -4, 6, 4, hair, 1); P(-2, -5, 4, 1, hair, 1); P(-2, -3, 2, 1, hairL, 1); }
+  }
   // legs and shoes
   P(-1 - lw, 30, lw, 5, jeans); P(1, 30, lw, 5, jeansD); P(-2 - lw, 35, lw + 1, 1, '#2A2420'); P(1, 35, lw + 1, 1, '#2A2420');
   // hips
@@ -1172,22 +1184,30 @@ function drawAvatar(g, cx, foot, f, opt = {}) {
   P(-tw / 2 - aw, 17, aw, 7, jk, 1); P(tw / 2, 17, aw, 7, jkD, 1); P(-tw / 2 - aw, 24, aw, 2, skin, 1); P(tw / 2, 24, aw, 2, skinD, 1);
   // puffer jacket with quilting lines, zip and a black turtleneck
   P(-tw / 2, 17, tw, 9, jk, 1); P(tw / 2 - 1, 17, 1, 9, jkD, 1); P(-tw / 2, 21, tw, 1, jkD, 1); P(-1, 17, 2, 1, '#1A1A1A', 1);
-  // striped scarf with a hanging end
-  [['#E6E6E6', 14], ['#5A5A5A', 15], ['#E6E6E6', 16]].forEach(([c, y]) => P(-4, y, 8, 1, c, 1));
-  P(-3, 17, 2, 3, '#E6E6E6', 1); P(-3, 18, 2, 1, '#5A5A5A', 1);
+  // neck and collar
+  P(-1, 14, 2, 3, skinD, 1); P(-tw / 2 + 1, 16, tw - 2, 1, jkL, 1);
   // face
   P(-hf, 4, FW, 10, skin, 1); P(-hf + 1, 14, FW - 2, 1, skin, 1);
   P(-4, 7, 2, 1, hairD, 1); P(2, 7, 2, 1, hairD, 1);                       // brows
   P(-4, 11, 1, 1, '#E58C8C', 1); P(3, 11, 1, 1, '#E58C8C', 1);             // blush
   P(0, 11, 1, 1, skinD, 1); P(-1, 12, 3, 1, '#B5535A', 1);                 // nose, smile
-  // thin round specs: a 4x3 ring per lens, eye and glint inside, bridge in between
+  // eyes, with optional round glasses: a 4x3 ring per lens, bridge in between
   const fr = A.frame;
-  for (const lx of [-5, 1]) { P(lx + 1, 8, 2, 1, fr, 1); P(lx, 9, 1, 1, fr, 1); P(lx + 3, 9, 1, 1, fr, 1); P(lx + 1, 10, 2, 1, fr, 1); P(lx + 1, 9, 2, 1, '#F1E9E2', 1); P(lx === -5 ? lx + 2 : lx + 1, 9, 1, 1, '#1A120C', 1); }
-  P(-1, 9, 2, 1, fr, 1);
-  // hair, front layer: middle parting, curls framing the face, locks over the shoulders
-  P(-hf, 4, hf - 1, 1, hair, 1); P(1, 4, hf - 1, 1, hair, 1); P(-hf, 5, 2, 1, hair, 1); P(hf - 2, 5, 2, 1, hair, 1);
-  for (let y = 5; y <= 15; y++) { const k = y % 3 === 0 ? 1 : 0; P(-hf - 1, y, 2 - k, 1, hair, 1); P(hf - 1 + k, y, 2 - k, 1, hair, 1); }
-  for (let y = 15; y <= 21; y++) { const w = y < 19 ? 3 : 2, k = y % 2; P(-hf - 2 + k, y, w, 1, hair, 1); P(hf - 1 - k, y, w, 1, hair, 1); if (y % 3 === 0) { P(-hf - 1 + k, y, 1, 1, hairL, 1); P(hf - k, y, 1, 1, hairL, 1); } }
+  if (!fr || fr === 'none') { P(-4, 9, 2, 1, '#F1E9E2', 1); P(-3, 9, 1, 1, '#1A120C', 1); P(2, 9, 2, 1, '#F1E9E2', 1); P(2, 9, 1, 1, '#1A120C', 1); }
+  else for (const lx of [-5, 1]) { P(lx + 1, 8, 2, 1, fr, 1); P(lx, 9, 1, 1, fr, 1); P(lx + 3, 9, 1, 1, fr, 1); P(lx + 1, 10, 2, 1, fr, 1); P(lx + 1, 9, 2, 1, '#F1E9E2', 1); P(lx === -5 ? lx + 2 : lx + 1, 9, 1, 1, '#1A120C', 1); }
+  if (fr && fr !== 'none') P(-1, 9, 2, 1, fr, 1);
+  // hair, front layer
+  if (style === 'curly') {
+    P(-hf, 4, hf - 1, 1, hair, 1); P(1, 4, hf - 1, 1, hair, 1); P(-hf, 5, 2, 1, hair, 1); P(hf - 2, 5, 2, 1, hair, 1);
+    for (let y = 5; y <= 15; y++) { const k = y % 3 === 0 ? 1 : 0; P(-hf - 1, y, 2 - k, 1, hair, 1); P(hf - 1 + k, y, 2 - k, 1, hair, 1); }
+    for (let y = 15; y <= 21; y++) { const w = y < 19 ? 3 : 2, k = y % 2; P(-hf - 2 + k, y, w, 1, hair, 1); P(hf - 1 - k, y, w, 1, hair, 1); if (y % 3 === 0) { P(-hf - 1 + k, y, 1, 1, hairL, 1); P(hf - k, y, 1, 1, hairL, 1); } }
+  } else if (style === 'long') {
+    P(-hf, 4, hf - 1, 1, hair, 1); P(1, 4, hf - 1, 1, hair, 1); P(-hf, 5, 2, 1, hair, 1); P(hf - 2, 5, 2, 1, hair, 1);
+    for (let y = 5; y <= 20; y++) { P(-hf - 1, y, 2, 1, hair, 1); P(hf - 1, y, 2, 1, hair, 1); }
+  } else {
+    P(-hf, 4, FW, 1, hair, 1); P(-hf, 5, 4, 1, hair, 1); P(hf - 1, 5, 1, 1, hair, 1);
+    for (let y = 5; y <= 8; y++) { P(-hf - 1, y, 1, 1, hair, 1); P(hf, y, 1, 1, hair, 1); }
+  }
   g.restore();
 }
 const OUTLINE = '#8B949E';
@@ -1197,19 +1217,19 @@ function drawSprite(g, name, x, y, opt = {}) {
   if (opt.outline) { g.fillStyle = opt.outline; for (let py = -1; py <= hgt; py++) for (let px = -1; px <= w; px++) if (at(px, py) === '.' && (at(px + 1, py) !== '.' || at(px - 1, py) !== '.' || at(px, py + 1) !== '.' || at(px, py - 1) !== '.')) g.fillRect(x + px, y + py, 1, 1); }
   for (let py = 0; py < hgt; py++) for (let px = 0; px < w; px++) { const c = at(px, py); if (c !== '.') { g.fillStyle = s.p[c]; g.fillRect(x + px, y + py, 1, 1); } }
 }
-/* You, with Bishop riding on your head and Teddy and Whiskey at your feet. */
-function drawHer(g, cx, foot, f, opt = {}) {
+/* You, with Mochi riding on your head and Biscuit and Maple at your feet. */
+function drawYou(g, cx, foot, f, opt = {}) {
   for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) drawAvatar(g, cx + dx, foot + dy, f, { ...opt, mono: OUTLINE });
   drawAvatar(g, cx, foot, f, opt);
 }
 function drawCrew(g, cx, foot, f, opt = {}) {
-  drawHer(g, cx, foot, f, opt);
+  drawYou(g, cx, foot, f, opt);
   const down = opt.bob ? 1 : 0, tUp = opt.anim && opt.bob ? 1 : 0, wUp = opt.anim && !opt.bob ? 1 : 0;
-  drawSprite(g, 'bishop', cx - 7, foot - 41 + down, { outline: OUTLINE });
-  drawSprite(g, 'teddy', cx - 24, foot - 10 - tUp, { outline: OUTLINE });
-  drawSprite(g, 'whiskey', cx + 8, foot - 10 - wUp, { outline: OUTLINE, flip: true });
+  drawSprite(g, 'mochi', cx - 7, foot - 41 + down, { outline: OUTLINE });
+  drawSprite(g, 'biscuit', cx - 24, foot - 10 - tUp, { outline: OUTLINE });
+  drawSprite(g, 'maple', cx + 8, foot - 10 - wUp, { outline: OUTLINE, flip: true });
 }
-const PETS = [['bishop', /\bbishop\b/i], ['teddy', /\bteddy\b/i], ['whiskey', /\bwhiske?y\b/i]];
+const PETS = [['mochi', /\bmochi\b/i], ['biscuit', /\bbiscuit\b/i], ['maple', /\bmaple\b/i]];
 const petIn = name => (PETS.find(([, re]) => re.test(name || '')) || [])[0] || null;
 function bmiCat(b) { return b < 18.5 ? 'underweight range' : b < 25 ? 'healthy range' : b < 30 ? 'overweight range' : 'obesity range'; }
 const heightCm = () => { const v = numOrNull(S.settings.heightCm); return v && v >= 100 && v <= 230 ? v : null; };
@@ -1337,7 +1357,7 @@ const PRIO_GROUPS = {
 };
 const DEFAULT_ORDER = ['career', 'health', 'family', 'work'];
 const prioOrder = () => { const o = S.settings.prioOrder; return Array.isArray(o) && o.length === DEFAULT_ORDER.length && DEFAULT_ORDER.every(k => o.includes(k)) ? o : DEFAULT_ORDER; };
-const PET_RE = /\b(bishop|cat|kitten|vet|litter)\b/i;
+const PET_RE = /\b(mochi|cat|kitten|vet|litter)\b/i;
 function groupOfTask(x) { if (PET_RE.test(x.title || '')) return 'health'; const a = areaOf(x); return a === 'career' || a === 'study' ? 'career' : a === 'health' ? 'health' : a === 'office' ? 'work' : 'family'; }
 const groupRank = x => prioOrder().indexOf(groupOfTask(x));
 const prioText = () => prioOrder().map((k, i) => `${i + 1}. ${PRIO_GROUPS[k].label} (${PRIO_GROUPS[k].hint})`).join('; ');
@@ -1665,7 +1685,7 @@ function floatXP(el, n) {
 function reward(el, xp, big) { burst(el, null, big); floatXP(el, xp); beep(SND.tick); }
 
 /* ================= render orchestration ================= */
-const PANELS = { today: () => renderToday(), journey: () => renderJourney(), tasks: () => renderTasks(), habits: () => renderHabits(), weight: () => renderWeight(), bishop: () => renderBishop(), jobs: () => renderJobs(), ach: () => renderAchievements() };
+const PANELS = { today: () => renderToday(), journey: () => renderJourney(), tasks: () => renderTasks(), habits: () => renderHabits(), weight: () => renderWeight(), mochi: () => renderMochi(), jobs: () => renderJobs(), ach: () => renderAchievements() };
 const MENU = [
   ['today', 'clock', 'Today', 'What to do now'],
   ['journey', 'map', 'Journey', 'Long-term goals and your road to them'],
@@ -1681,7 +1701,7 @@ const NAV = [
   { key: 'plan', icon: 'book', label: 'Plan', tabs: ['tasks', 'journey'], subs: ['Tasks', 'Goals'] },
   { key: 'habits', icon: 'flame', label: 'Habits', tabs: ['habits'] },
   { key: 'jobs', icon: 'paper', label: 'Jobs', tabs: ['jobs'] },
-  { key: 'me', icon: 'me', label: 'Me', tabs: ['weight', 'bishop', 'ach'], subs: ['Weight', 'Bishop', 'Profile'] }
+  { key: 'me', icon: 'me', label: 'Me', tabs: ['weight', 'mochi', 'ach'], subs: ['Weight', 'Mochi', 'Profile'] }
 ];
 const navOf = t => NAV.find(n => n.tabs.includes(t)) || NAV[0];
 let lastSub = {}; try { lastSub = JSON.parse(ls.get('daybook.sub') || '{}') || {}; } catch { lastSub = {}; }
@@ -1806,7 +1826,7 @@ function itemMeta(it, dIso) {
     if (it.ref.minutes) bits.push(h('span', { text: fmtMin(it.ref.minutes) }));
     if (!it.done) bits.push(priChip(it.ref, 'bd-'));
     if (it.late) bits.push(h('span', { class: 'warn', text: dueLabel(it.ref.due, todayIso()).text }));
-    if (S.breaking.has(it.id)) bits.push(h('span', { class: 'k', style: 'color:var(--aqua)', text: 'Whiskey is breaking it down…' }));
+    if (S.breaking.has(it.id)) bits.push(h('span', { class: 'k', style: 'color:var(--aqua)', text: 'Maple is breaking it down…' }));
     const gl = it.ref.goal && getGoal(it.ref.goal); if (gl) bits.push(h('span', { class: 'k', title: `Milestone of: ${gl.title}`, html: spr('map', 1) + ' Goal step' }));
   } else if (it.kind === 'job') {
     bits.push(h('span', { class: 'k' }, h('span', { class: 'dot8', style: `--ac:var(--s-${it.ref.stage})` }), 'Job'));
@@ -1848,21 +1868,21 @@ function celebrateIfDone(dIso) {
     if (items.length && items.every(i => i.done) && lastCelebrated !== dIso) { lastCelebrated = dIso; burst($('#sky'), ['#FFD83D', '#80FF20', '#55FFFF', '#E5302F'], true); beep(SND.level); toast('Day complete! Every task and habit is done.'); }
   }, 150);
 }
-function teddyFetch() {
+function biscuitFetch() {
   const limit = iso(addDays(today(), 2));
   const df = S.dayFilter && S.dayFilter !== 'habits' ? S.dayFilter : 'all';
   const open = liveTasks().filter(t => !t.done && !t.split && (!t.due || t.due <= limit) && inDayFilter({ kind: 'task', ref: t }, df));
   const pick = open.sort((a, b) => (a.minutes || 30) - (b.minutes || 30) || (a.priority || 2) - (b.priority || 2) || byDue(a, b))[0];
-  if (!pick) { say('teddy', df === 'all' ? 'No quick wins left. Nap time?' : `No quick ${dayFilterLabel(df)} wins left!`); dogDo('teddy', 'hop'); return; }
+  if (!pick) { say('biscuit', df === 'all' ? 'No quick wins left. Nap time?' : `No quick ${dayFilterLabel(df)} wins left!`); dogDo('biscuit', 'hop'); return; }
   S.fetched = pick.id;
-  dogDo('teddy', 'run', 'scroll'); beep(SND.tick);
-  setTimeout(() => say('teddy', `Got one! Only ${fmtMin(pick.minutes)}`), 900);
+  dogDo('biscuit', 'run', 'scroll'); beep(SND.tick);
+  setTimeout(() => say('biscuit', `Got one! Only ${fmtMin(pick.minutes)}`), 900);
   render();
 }
-async function whiskeyBreak(id) {
+async function mapleBreak(id) {
   const x = getTask(id); if (!x || x.parent || S.breaking.has(id)) return;
   S.breaking.add(id); openTask(id);
-  if (S.tab === 'today') { dogDo('whiskey', 'hop'); say('whiskey', `Breaking down “${short(x.title, 26)}”…`, 4000); }
+  if (S.tab === 'today') { dogDo('maple', 'hop'); say('maple', `Breaking down “${short(x.title, 26)}”…`, 4000); }
   let steps = null;
   if (S.sample && S.aiOn) {
     try {
@@ -1886,8 +1906,8 @@ Reply with only a JSON array, for example:
   steps.forEach((st, i) => write('tasks', ids[i], 'set', { title: st.title, due: x.due || todayIso(), dateSuggested: false, priority: x.priority || 2, minutes: st.minutes, area: areaOf(x), slot: taskSlot(x), done: false, createdAt: now + i, raw: `step ${base + i + 1} of: ${x.title}`, status: 'ai', why: '', parent: x.id, step: base + i + 1 }));
   if (S.fetched === x.id) S.fetched = ids[0];
   write('tasks', x.id, 'update', { split: base + steps.length, status: x.status === 'sorting' ? 'manual' : (x.status || 'ai') });
-  if (S.tab === 'today') { dogDo('whiskey', 'run', 'scroll'); setTimeout(() => say('whiskey', `${steps.length} steps for “${short(x.title, 22)}”!`), 900); }
-  if (!S.sheet || S.sheet.id !== x.id) toast(`Whiskey split “${short(x.title, 40)}” into ${steps.length} steps.`, { label: 'Show steps', fn: () => openTask(x.id) });
+  if (S.tab === 'today') { dogDo('maple', 'run', 'scroll'); setTimeout(() => say('maple', `${steps.length} steps for “${short(x.title, 22)}”!`), 900); }
+  if (!S.sheet || S.sheet.id !== x.id) toast(`Maple split “${short(x.title, 40)}” into ${steps.length} steps.`, { label: 'Show steps', fn: () => openTask(x.id) });
 }
 function goalTaskDone(t) {
   const g = t && t.goal && getGoal(t.goal); if (!g) return;
@@ -1919,7 +1939,7 @@ function openBoardPop(anchor, it, dIso) {
     p.append(h('div', { class: 'pop-sep' }));
     const nextDay = iso(addDays(fromIso(dIso), 1));
     p.append(opt('Push to the next day', fmtShort.format(fromIso(nextDay)), false, () => { setTask(it.id, { due: nextDay, dateSuggested: false }); closePop(); toast('Moved. No guilt, it will be there tomorrow.'); }));
-    if (!it.ref.parent && !it.ref.split) p.append(opt('Ask Whiskey to break it down', '', false, () => { closePop(); whiskeyBreak(it.id); }));
+    if (!it.ref.parent && !it.ref.split) p.append(opt('Ask Maple to break it down', '', false, () => { closePop(); mapleBreak(it.id); }));
     p.append(opt('Open in Tasks', '', false, () => { closePop(); setTab('tasks'); }));
   });
 }
@@ -1928,7 +1948,7 @@ function boardRow(it, dIso) {
   const ck = h('button', { type: 'button', class: `slot${it.done ? ' on' : ''}`, html: it.done ? spr('check', 3) : '', 'aria-pressed': String(it.done), 'aria-label': `${it.done ? 'Undo' : 'Done'}: ${it.title}` });
   ck.addEventListener('click', () => completeItem(it, dIso, ck));
   const par = it.kind === 'task' && it.ref.parent && getTask(it.ref.parent);
-  const body = h('div', { style: 'min-width:0' }, par ? h('button', { type: 'button', class: 'linkbtn bi-ctx', title: `Step ${it.ref.step || ''} of “${par.title}”. Open the whole task`, onclick: () => openTask(it.id) }, h('span', { html: spr('whiskey', 1), style: 'display:inline-flex;flex:none' }), h('span', { class: 'ctxt', text: `Step ${it.ref.step || ''} of ${stepsOf(par.id).length} · ${par.title}` })) : null, it.kind === 'task' ? h('div', { class: 'bi-title open', role: 'button', tabindex: '0', title: 'Open task', text: it.title, onclick: () => openTask(it.id), onkeydown: e => { if (e.key === 'Enter') { e.preventDefault(); openTask(it.id); } } }) : h('div', { class: 'bi-title', text: it.title }), h('div', { class: 'bi-meta' }, itemMeta(it, dIso)));
+  const body = h('div', { style: 'min-width:0' }, par ? h('button', { type: 'button', class: 'linkbtn bi-ctx', title: `Step ${it.ref.step || ''} of “${par.title}”. Open the whole task`, onclick: () => openTask(it.id) }, h('span', { html: spr('maple', 1), style: 'display:inline-flex;flex:none' }), h('span', { class: 'ctxt', text: `Step ${it.ref.step || ''} of ${stepsOf(par.id).length} · ${par.title}` })) : null, it.kind === 'task' ? h('div', { class: 'bi-title open', role: 'button', tabindex: '0', title: 'Open task', text: it.title, onclick: () => openTask(it.id), onkeydown: e => { if (e.key === 'Enter') { e.preventDefault(); openTask(it.id); } } }) : h('div', { class: 'bi-title', text: it.title }), h('div', { class: 'bi-meta' }, itemMeta(it, dIso)));
   let more = h('span');
   if (it.kind === 'task') more = h('button', { type: 'button', class: 'bi-more', text: '•••', 'data-pop': it.id + ':board', 'aria-haspopup': 'dialog', 'aria-expanded': 'false', 'aria-label': `Options for ${it.title}`, onclick: e => openBoardPop(e.currentTarget, it, dIso) });
   else if (it.kind === 'job') more = h('button', { type: 'button', class: 'bi-more', text: '▶', 'aria-label': 'Open in Jobs', onclick: () => setTab('jobs') });
@@ -1939,20 +1959,20 @@ const SKY = {
   night: ['#070A1C', '#0D1230', '#141B42'], dawn: ['#28356E', '#9A4F72', '#E88A50'],
   day: ['#3D78D2', '#6AA0E6', '#A6C8F0'], dusk: ['#262A66', '#9A4466', '#E87A3E']
 };
-/* ---- the living scene: Bishop roams and pesters, Teddy and Whiskey help ---- */
+/* ---- the living scene: Mochi roams and pesters, Biscuit and Maple help ---- */
 const SCENE = { bg: null, her: null, W: 0, H: 0, gy: 0, cx: 0, raf: 0, last: 0, cat: null, dogs: null, bubbles: [], cheerTurn: 0 };
 const LINES = {
-  me: ['Bishop, I can’t see!', 'Bishop! My specs!', 'Not now, Bishop…', 'Okay, one pat.', 'I’m working!'],
+  me: ['Mochi, I can’t see!', 'Mochi! Not on my head!', 'Not now, Mochi…', 'Okay, one pat.', 'I’m working!'],
   cat: ['meow', 'mrrp?', 'feed me', 'purrr', '*knocks pen off*', 'mrow!'],
-  teddy: ['Woof! Done!', 'Good job!', 'Next one?', 'You did it!'],
-  whiskey: ['Yay!', 'Woof woof!', 'Treat time?', 'So proud!']
+  biscuit: ['Woof! Done!', 'Good job!', 'Next one?', 'You did it!'],
+  maple: ['Yay!', 'Woof woof!', 'Treat time?', 'So proud!']
 };
 const pickOne = a => a[Math.floor(Math.random() * a.length)];
 const rnd = (a, b) => a + Math.random() * (b - a);
 function initCrew() {
   const now = performance.now();
   if (!SCENE.cat) SCENE.cat = { mode: 'head', until: now + 1e9, x: 0, y: 0, dir: -1, speed: 10, laps: 0, t0: now, dur: 0, from: null, to: null, target: null };
-  if (!SCENE.dogs) SCENE.dogs = [{ name: 'teddy', home: -24, mode: 'idle', t0: 0, dur: 0, x: 0 }, { name: 'whiskey', home: 8, mode: 'idle', t0: 0, dur: 0, x: 0 }];
+  if (!SCENE.dogs) SCENE.dogs = [{ name: 'biscuit', home: -24, mode: 'idle', t0: 0, dur: 0, x: 0 }, { name: 'maple', home: 8, mode: 'idle', t0: 0, dur: 0, x: 0 }];
 }
 const catHead = () => ({ x: SCENE.cx - 7, y: SCENE.gy - 41 });
 const catLandX = () => SCENE.cx - 40;
@@ -1983,7 +2003,7 @@ function stepCat(now) {
 }
 function catPos(now) {
   const c = SCENE.cat, head = catHead();
-  if (c.mode === 'head' || c.mode === 'paw') return { sprite: 'bishop', x: head.x, y: head.y, flip: false };
+  if (c.mode === 'head' || c.mode === 'paw') return { sprite: 'mochi', x: head.x, y: head.y, flip: false };
   if (c.mode === 'jumpup' || c.mode === 'jumpdown') {
     const t = clamp((now - c.t0) / c.dur, 0, 1);
     return { sprite: 'catjump', x: Math.round(c.from.x + (c.to.x - c.from.x) * t), y: Math.round(c.from.y + (c.to.y - c.from.y) * t - Math.sin(Math.PI * t) * 12) - 4, flip: c.to.x < c.from.x };
@@ -1999,9 +2019,9 @@ function dogPos(d, now) {
     const x = Math.round(home + (target - home) * k);
     return { x, y: gy - 10 - (Math.floor(now / 110) % 2), flip: out, carry: !out && d.carry };
   }
-  if (d.mode === 'hop') { const t = (now - d.t0) % 320 / 320; return { x: home, y: gy - 10 - Math.round(Math.sin(Math.PI * t) * 4), flip: d.name === 'whiskey' }; }
-  const breathe = ((now / 1000) + (d.name === 'teddy' ? 0 : 2.3)) % 4.5 < 0.2 ? 1 : 0;
-  return { x: home, y: gy - 10 - breathe, flip: d.name === 'whiskey' };
+  if (d.mode === 'hop') { const t = (now - d.t0) % 320 / 320; return { x: home, y: gy - 10 - Math.round(Math.sin(Math.PI * t) * 4), flip: d.name === 'maple' }; }
+  const breathe = ((now / 1000) + (d.name === 'biscuit' ? 0 : 2.3)) % 4.5 < 0.2 ? 1 : 0;
+  return { x: home, y: gy - 10 - breathe, flip: d.name === 'maple' };
 }
 function stepDogs(now) { for (const d of SCENE.dogs || []) if (d.mode !== 'idle' && now - d.t0 > d.dur) { d.mode = 'idle'; d.carry = null; } }
 function dogDo(name, mode, carry) {
@@ -2021,8 +2041,8 @@ function paintScene(now) {
   }
   const c = catPos(now);
   drawSprite(g, c.sprite, c.x, c.y, { outline: OUTLINE, flip: c.flip });
-  if (SCENE.cat.mode === 'paw') { g.fillStyle = '#F4F4F4'; g.fillRect(cx - 4, gy - (Math.floor(now / 170) % 2 ? 28 : 31), 2, 2); }
-  if (SCENE.cat.mode === 'head' && Math.floor(now / 450) % 2) { g.fillStyle = '#141414'; g.fillRect(cx + 7, gy - 38, 1, 2); }
+  if (SCENE.cat.mode === 'paw') { g.fillStyle = '#F6E3C6'; g.fillRect(cx - 4, gy - (Math.floor(now / 170) % 2 ? 28 : 31), 2, 2); }
+  if (SCENE.cat.mode === 'head' && Math.floor(now / 450) % 2) { g.fillStyle = '#D9822B'; g.fillRect(cx + 7, gy - 38, 1, 2); }
   placeBubbles(now);
 }
 function anchorOf(who, now) {
@@ -2062,12 +2082,12 @@ function setFocus(v) {
     if (SCENE.cat) { SCENE.cat.mode = 'head'; SCENE.cat.until = Infinity; }
     for (const d of SCENE.dogs || []) { d.mode = 'idle'; d.carry = null; }
   }
-  toast(S.focus ? 'Focus mode on. Bishop, Teddy and Whiskey are resting.' : 'Focus mode off.');
+  toast(S.focus ? 'Focus mode on. Mochi, Biscuit and Maple are resting.' : 'Focus mode off.');
   render();
 }
 function crewCheer(big) {
   if (S.tab !== 'today' || !SCENE.dogs || S.focus) return;
-  const name = SCENE.cheerTurn++ % 2 ? 'whiskey' : 'teddy';
+  const name = SCENE.cheerTurn++ % 2 ? 'maple' : 'biscuit';
   dogDo(name, big ? 'run' : 'hop', big ? 'scroll' : null);
   say(name, pickOne(LINES[name]));
   if (Math.random() < 0.3) setTimeout(() => say('cat', pickOne(LINES.cat)), 700);
@@ -2082,7 +2102,7 @@ $('#skyCanvas').addEventListener('pointerdown', e => {
     else if (SCENE.cat.mode === 'head' && !S.focus) catJump(false);
     return;
   }
-  for (const d of SCENE.dogs) { const p = dogPos(d, now); if (x >= p.x - 2 && x <= p.x + 18 && y >= p.y - 3 && y <= p.y + 12) { dogDo(d.name, 'hop'); say(d.name, d.name === 'teddy' ? 'Want a quick win? Tap Fetch!' : 'Big task? I can break it down!'); return; } }
+  for (const d of SCENE.dogs) { const p = dogPos(d, now); if (x >= p.x - 2 && x <= p.x + 18 && y >= p.y - 3 && y <= p.y + 12) { dogDo(d.name, 'hop'); say(d.name, d.name === 'biscuit' ? 'Want a quick win? Tap Fetch!' : 'Big task? I can break it down!'); return; } }
   if (Math.abs(x - SCENE.cx) < 12 && y > SCENE.gy - 40) say('me', pickOne(['Let’s do this!', 'One thing at a time.', 'Focus mode on.']));
 });
 function drawSky() {
@@ -2113,7 +2133,7 @@ function drawSky() {
   for (let y = gy; y < H; y++) for (let x = 0; x < W; x++) { const v = r(); g.fillStyle = y < gy + 2 ? (v < 0.3 ? '#4E8E27' : v < 0.7 ? '#5DA130' : '#6CB43A') : (v < 0.4 ? '#5C3D22' : v < 0.8 ? '#7A5230' : '#6E4A2A'); g.fillRect(x, y, 1, 1); }
   g.fillStyle = 'rgba(0,0,0,.28)'; g.fillRect(0, 0, W, H);
   const f = bodyModel().f, her = document.createElement('canvas'); her.width = 44; her.height = 48;
-  drawHer(her.getContext('2d'), 22, 46, f);
+  drawYou(her.getContext('2d'), 22, 46, f);
   Object.assign(SCENE, { bg, her, W, H, gy, cx: W - 26 });
   if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
   initCrew();
@@ -2143,11 +2163,11 @@ function renderToday() {
   if (nx) {
     const go = h('button', { type: 'button', class: 'mc green sm', text: nx.kind === 'weigh' ? 'Weigh in' : 'Done!' });
     go.addEventListener('click', () => completeItem(nx, dIso, go));
-    nd.append(h('div', { class: 'nextq' }, h('span', { class: 'lbl', text: fetched ? 'TEDDY FETCHED' : isToday ? 'NEXT UP' : 'FIRST UP' }), nx.kind === 'task' ? h('b', { role: 'button', tabindex: '0', style: 'cursor:pointer', title: 'Open task', text: nx.title, onclick: () => openTask(nx.id), onkeydown: e => { if (e.key === 'Enter') openTask(nx.id); } }) : h('b', { text: nx.title }), nx.kind === 'task' ? priChip(nx.ref, 'nx-') : null, nx.kind === 'task' && nx.ref.parent && getTask(nx.ref.parent) ? h('button', { type: 'button', class: 'linkbtn', style: 'font-size:.9rem', text: `step ${nx.ref.step || ''} of ${short(getTask(nx.ref.parent).title, 30)}`, onclick: () => openTask(nx.id) }) : null, h('span', { class: 'muted', text: nx.kind === 'habit' && nx.exact ? fmtClock(nx.min % 1440) : BLOCK[nx.block] ? BLOCK[nx.block].label.toLowerCase() : '' }), h('span', { style: 'margin-left:auto' }, go)));
+    nd.append(h('div', { class: 'nextq' }, h('span', { class: 'lbl', text: fetched ? 'BISCUIT FETCHED' : isToday ? 'NEXT UP' : 'FIRST UP' }), nx.kind === 'task' ? h('b', { role: 'button', tabindex: '0', style: 'cursor:pointer', title: 'Open task', text: nx.title, onclick: () => openTask(nx.id), onkeydown: e => { if (e.key === 'Enter') openTask(nx.id); } }) : h('b', { text: nx.title }), nx.kind === 'task' ? priChip(nx.ref, 'nx-') : null, nx.kind === 'task' && nx.ref.parent && getTask(nx.ref.parent) ? h('button', { type: 'button', class: 'linkbtn', style: 'font-size:.9rem', text: `step ${nx.ref.step || ''} of ${short(getTask(nx.ref.parent).title, 30)}`, onclick: () => openTask(nx.id) }) : null, h('span', { class: 'muted', text: nx.kind === 'habit' && nx.exact ? fmtClock(nx.min % 1440) : BLOCK[nx.block] ? BLOCK[nx.block].label.toLowerCase() : '' }), h('span', { style: 'margin-left:auto' }, go)));
   } else if (items.length) nd.append(h('div', { class: 'nextq' }, h('span', { class: 'lbl', text: f === 'all' ? 'DAY COMPLETE' : `${dayFilterLabel(f).toUpperCase()} COMPLETE` }), h('span', { text: f === 'all' ? 'Everything is done. Rest is part of the plan.' : `Everything in ${dayFilterLabel(f)} is done for this day.` })));
   if (isToday) nd.append(h('div', { class: 'helpers' },
-    h('button', { type: 'button', class: 'mc sm', html: spr('teddy', 2) + ' Teddy: quick win', onclick: teddyFetch }),
-    nx && nx.kind === 'task' && !nx.ref.parent && !nx.ref.split ? h('button', { type: 'button', class: 'mc sm', html: spr('whiskey', 2) + ' Whiskey: break it down', onclick: () => whiskeyBreak(nx.id) }) : null));
+    h('button', { type: 'button', class: 'mc sm', html: spr('biscuit', 2) + ' Biscuit: quick win', onclick: biscuitFetch }),
+    nx && nx.kind === 'task' && !nx.ref.parent && !nx.ref.split ? h('button', { type: 'button', class: 'mc sm', html: spr('maple', 2) + ' Maple: break it down', onclick: () => mapleBreak(nx.id) }) : null));
   const board = $('#dayBoard');
   board.replaceChildren();
   if (!items.length && all.length && f !== 'all') { board.append(h('div', { class: 'panel empty' }, h('h3', { text: `Nothing in ${dayFilterLabel(f)} on this day` }), h('p', { text: `${all.length} other thing${all.length > 1 ? 's are' : ' is'} on the board.` }), h('div', {}, h('button', { type: 'button', class: 'mc sm', text: 'Show everything', onclick: () => setDayFilter('all') })))); return; }
@@ -2227,7 +2247,7 @@ function renderPrefs() {
     h('div', { class: 'prefs' },
       h('button', { type: 'button', class: 'mc sm', 'aria-pressed': String(S.sound), text: S.sound ? 'Sound: on' : 'Sound: off', onclick: () => { S.sound = !S.sound; ls.set(K.sound, S.sound ? 'on' : 'off'); if (S.sound) beep(SND.tick); render(); } }),
       h('button', { type: 'button', class: 'mc sm', 'aria-pressed': String(focus), text: focus ? 'Focus mode: on' : 'Focus mode: off', onclick: () => setFocus(!focus) })),
-    h('p', { class: 'muted', style: 'margin:10px 0 0;font-size:.92rem', text: 'Focus mode freezes Bishop, Teddy and Whiskey and hides their speech bubbles, so nothing moves while you work. You can also switch it from the Today scene or press F.' }));
+    h('p', { class: 'muted', style: 'margin:10px 0 0;font-size:.92rem', text: 'Focus mode freezes Mochi, Biscuit and Maple and hides their speech bubbles, so nothing moves while you work. You can also switch it from the Today scene or press F.' }));
 }
 
 /* ================= night summary: a check on the plan ================= */
@@ -2379,7 +2399,7 @@ function weightMilestones(W) {
 /* ================= GOALS (long-term) ================= */
 const GOAL_XP = 15, GOAL_DONE_XP = 60;
 const AREA_HEX = { study: '#D46BFF', office: '#4FD8E8', health: '#62D962', career: '#FFB13B', 'else': '#A8A8A8' };
-const GOAL_IDEAS = ['Graduate with distinction by June 2027', 'Turn my internship into a full-time offer', 'Land a strategy role I love by next year', 'Run a 10k without stopping in 6 months', 'Save 5,000 € for a big trip this year'];
+const GOAL_IDEAS = ['Graduate with distinction by June 2027', 'Turn my internship into a full-time offer', 'Land a strategy role I love by next year', 'Run a 10k without stopping in 6 months', 'Save for a big trip this year'];
 const newSid = i => 's' + Date.now().toString(36) + i + Math.random().toString(36).slice(2, 5);
 function goalSteps(g) {
   return (Array.isArray(g.steps) ? g.steps : []).filter(c => c && typeof c.t === 'string' && c.t.trim())
@@ -2574,7 +2594,7 @@ function goalCard(g) {
       const linked = liveTasks().find(t => t.goal === g.id && t.goalStep === c.id && !t.done);
       btns.append(h('button', { type: 'button', class: 'mc sm green', text: 'Done!', onclick: e => setCheckpoint(g.id, c.id, true, e.currentTarget) }),
         linked ? h('button', { type: 'button', class: 'mc sm', text: `On your board · ${dueLabel(linked.due, tIso).text}`, onclick: () => setTab('today') })
-          : h('button', { type: 'button', class: 'mc sm', html: spr('teddy', 1) + ' Do it today', onclick: () => goalQuest(g, c) }));
+          : h('button', { type: 'button', class: 'mc sm', html: spr('biscuit', 1) + ' Do it today', onclick: () => goalQuest(g, c) }));
     }
     card.append(h('div', { class: 'gnext' }, h('span', { class: 'lbl', text: g.auto === 'weight' ? 'NEXT MILESTONE' : 'NEXT MILESTONE' }), h('b', { text: c.t }), btns));
   }
@@ -2666,18 +2686,18 @@ function renderJourney() {
 }
 function renderCustomizer(B) {
   const A = avatar(), host = $('#jCustom');
-  const cv = h('canvas', { width: '74', height: '50', role: 'img', 'aria-label': 'You with Bishop on your head and Teddy and Whiskey at your feet' });
+  const cv = h('canvas', { width: '74', height: '50', role: 'img', 'aria-label': 'You with Mochi on your head and Biscuit and Maple at your feet' });
   const g = cv.getContext('2d'); g.fillStyle = '#1A1814'; g.fillRect(0, 0, 74, 50);
   for (let x = 0; x < 74; x++) { g.fillStyle = x % 2 ? '#5DA130' : '#4E8E27'; g.fillRect(x, 47, 1, 3); }
   drawCrew(g, 37, 47, B.f);
   const row = (key, label) => h('div', { class: 'swrow', role: 'group', 'aria-label': label }, h('span', { class: 'label', text: label }),
-    AV_OPTS[key].map(([c, name]) => h('button', { type: 'button', class: 'swatch', style: `background:${c}`, 'aria-pressed': String(A[key] === c), 'aria-label': `${label}: ${name}`, title: name, onclick: () => saveSettings({ avatar: { ...A, [key]: c } }) })));
+    AV_OPTS[key].map(([c, name]) => h('button', { type: 'button', class: c === 'none' ? 'swatch none' : 'swatch', style: c === 'none' ? '' : `background:${c}`, 'aria-pressed': String(A[key] === c), 'aria-label': `${label}: ${name}`, title: name, onclick: () => saveSettings({ avatar: { ...A, [key]: c } }) })));
   const bText = B.bmi ? `Your character matches your BMI of ${B.bmi.toFixed(1)} (${B.cat}) and slims down as your 7-day average drops. BMI is a rough guide: it doesn't know your muscle, shape or health.` : heightCm() ? 'Log a weigh-in and your character will match your BMI range.' : 'Add your height on the Weight tab and your character will match your BMI range. Until then she changes with your progress toward your goal.';
-  host.replaceChildren(h('h2', { class: 'title', text: 'You and your crew' }), h('p', { class: 'lead', text: 'Bishop rides on your head, Teddy and Whiskey walk with you. Habits that mention them show their faces on your board.' }), h('div', { class: 'custom' }, cv, h('div', {}, row('skin', 'Skin'), row('hair', 'Long curly hair'), row('frame', 'Specs'), row('top', 'Jacket'), h('p', { class: 'muted', style: 'margin:4px 0 0', text: bText }))));
+  host.replaceChildren(h('h2', { class: 'title', text: 'You and your crew' }), h('p', { class: 'lead', text: 'Mochi rides on your head, Biscuit and Maple walk with you. Habits that mention them show their faces on your board.' }), h('div', { class: 'custom' }, cv, h('div', {}, row('skin', 'Skin'), h('div', { class: 'swrow', role: 'group', 'aria-label': 'Hair style' }, h('span', { class: 'label', text: 'Hair style' }), AV_STYLES.map(([k, name]) => h('button', { type: 'button', class: 'mc sm', text: name, 'aria-pressed': String((A.style || 'short') === k), onclick: () => saveSettings({ avatar: { ...A, style: k } }) }))), row('hair', 'Hair colour'), row('frame', 'Glasses'), row('top', 'Jacket'), h('p', { class: 'muted', style: 'margin:4px 0 0', text: bText }))));
 }
 
 
-/* ================= Bishop's weight ================= */
+/* ================= Mochi's weight ================= */
 const petSeries = () => S.petweights.map(w => ({ date: w.date || w.id, kg: Number(w.kg) })).filter(w => isFinite(w.kg) && w.kg > 0 && validIso(w.date)).sort((a, b) => a.date.localeCompare(b.date));
 const PD = { kg: '', date: '', open: false };
 const petOn = dIso => S.petweights.find(w => (w.date || w.id) === dIso);
@@ -2686,11 +2706,11 @@ function logPetWeight(kg, dIso, quiet) {
   if (!(kg > 0.3 && kg < 30)) { toast('That does not look like a cat weight. Try a number in kg, like 4.8.'); return false; }
   const d = validIso(dIso) && dIso <= todayIso() ? dIso : todayIso();
   write('petweights', d, 'set', { date: d, kg, at: Date.now() });
-  if (!quiet) { beep(SND.tick); toast(`Logged Bishop at ${kg.toFixed(2)} kg.`); }
+  if (!quiet) { beep(SND.tick); toast(`Logged Mochi at ${kg.toFixed(2)} kg.`); }
   return true;
 }
-function renderBishop() {
-  const ser = petSeries(), last = ser[ser.length - 1], tIso = todayIso(), target = numOrNull(S.settings.bishopTargetKg);
+function renderMochi() {
+  const ser = petSeries(), last = ser[ser.length - 1], tIso = todayIso(), target = numOrNull(S.settings.mochiTargetKg);
   let ch30 = null;
   if (last) { const base = [...ser].reverse().find(p => diffDays(last.date, p.date) >= 25); if (base) ch30 = last.kg - base.kg; }
   const kgIn = h('input', { type: 'number', class: 'input', id: 'petKg', step: '0.01', min: '0.5', max: '20', inputmode: 'decimal', placeholder: last ? last.kg.toFixed(2) : '4.80' });
@@ -2699,21 +2719,21 @@ function renderBishop() {
   const go = () => { if (logPetWeight(kgIn.value, dIn.value)) { PD.kg = ''; PD.date = ''; kgIn.value = ''; } };
   kgIn.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); go(); } });
   const tIn = h('input', { type: 'number', class: 'input', id: 'petTarget', step: '0.1', min: '0.5', max: '20', inputmode: 'decimal', placeholder: 'kg' }); tIn.value = target !== null ? String(target) : '';
-  tIn.addEventListener('change', () => { const v = numOrNull(tIn.value); saveSettings({ bishopTargetKg: v !== null && v > 0.3 && v < 30 ? Math.round(v * 10) / 10 : null }); });
+  tIn.addEventListener('change', () => { const v = numOrNull(tIn.value); saveSettings({ mochiTargetKg: v !== null && v > 0.3 && v < 30 ? Math.round(v * 10) / 10 : null }); });
   const stat = (a, b, c) => h('div', { class: 'stat' }, h('div', { class: 'lbl', text: a }), h('div', { class: 'val', text: b }), h('div', { class: 'sub2', text: c }));
   const since = last ? diffDays(tIso, last.date) : null;
   $('#petLog').replaceChildren(
-    h('div', { class: 'spread' }, h('h2', { class: 'title', html: spr('catsit', 2) + " Bishop's weight" })),
-    h('p', { class: 'lead', text: 'Weigh Bishop about once a month, at the same time of day. A slow climb is easy to miss without the numbers.' }),
+    h('div', { class: 'spread' }, h('h2', { class: 'title', html: spr('catsit', 2) + " Mochi's weight" })),
+    h('p', { class: 'lead', text: 'Weigh Mochi about once a month, at the same time of day. A slow climb is easy to miss without the numbers.' }),
     h('div', { class: 'pform' }, h('div', {}, h('label', { class: 'label', for: 'petKg', text: 'Weight (kg)' }), kgIn), h('div', {}, h('label', { class: 'label', for: 'petDate', text: 'Date' }), dIn), h('button', { type: 'button', class: 'mc green', text: 'Log weight', onclick: go })),
     h('div', { class: 'stats', style: 'margin-top:14px' },
       stat('LATEST', last ? `${last.kg.toFixed(2)} kg` : '–', last ? (since === 0 ? 'today' : `${since} day${since === 1 ? '' : 's'} ago`) : 'no weigh-ins yet'),
       stat('LAST 30 DAYS', ch30 === null ? '–' : `${ch30 > 0 ? '+' : ''}${(ch30 * 1000).toFixed(0)} g`, ch30 === null ? 'needs a month of data' : ch30 > 0.05 ? 'gaining' : ch30 < -0.05 ? 'losing' : 'steady'),
       stat('TARGET', target !== null ? `${target.toFixed(1)} kg` : '–', target !== null && last ? `${last.kg > target ? '+' : ''}${(last.kg - target).toFixed(2)} kg from target` : 'set below')),
     h('div', { class: 'ptarget' }, h('label', { for: 'petTarget', text: 'Healthy weight from your vet' }), tIn, h('span', { class: 'muted', text: 'kg' })),
-    h('p', { class: 'muted', style: 'margin:8px 0 0;font-size:.9rem', text: "Ask your vet what weight is right for Bishop, and talk to them if he keeps gaining." }));
+    h('p', { class: 'muted', style: 'margin:8px 0 0;font-size:.9rem', text: "Ask your vet what weight is right for Mochi, and talk to them if he keeps gaining." }));
   const card = $('#petChartCard');
-  card.replaceChildren(h('h2', { class: 'title', text: 'Bishop over time' }));
+  card.replaceChildren(h('h2', { class: 'title', text: 'Mochi over time' }));
   if (ser.length < 2) { card.append(h('p', { class: 'lead', text: ser.length ? 'One weigh-in so far. Log another next month to see the trend.' : 'Log his first weigh-in above to start the chart.' })); }
   else card.append(petChart(ser, target, card.clientWidth));
   if (ser.length) card.append(h('details', { style: 'margin-top:12px', open: PD.open, ontoggle: e => { PD.open = e.currentTarget.open; } }, h('summary', { class: 'eyebrow', style: 'cursor:pointer', text: `All weigh-ins (${ser.length})` }),
@@ -2728,7 +2748,7 @@ function petChart(ser, target, cw) {
   const vals = ser.map(p => p.kg).concat(target !== null ? [target] : []);
   let lo = Math.min(...vals), hi = Math.max(...vals); const pad = Math.max(0.1, (hi - lo) * 0.15); lo -= pad; hi += pad;
   const X = d => M.l + ((fromIso(d).getTime() - t0) / (t1 - t0)) * (W - M.l - M.r), Y = v => M.t + (1 - (v - lo) / (hi - lo)) * (H - M.t - M.b);
-  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bishop's weight from ${ser[0].kg.toFixed(2)} kg to ${ser[ser.length - 1].kg.toFixed(2)} kg">`;
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mochi's weight from ${ser[0].kg.toFixed(2)} kg to ${ser[ser.length - 1].kg.toFixed(2)} kg">`;
   for (let k = 0; k <= 3; k++) { const v = lo + (hi - lo) * k / 3, y = Y(v); svg += `<line x1="${M.l}" x2="${W - M.r}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#2E2A24" stroke-width="1"/><text x="${M.l - 8}" y="${(y + 4).toFixed(1)}" text-anchor="end">${v.toFixed(1)}</text>`; }
   if (target !== null) svg += `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(target).toFixed(1)}" y2="${Y(target).toFixed(1)}" stroke="#7CC444" stroke-width="2" stroke-dasharray="6 5"/><text x="${W - M.r}" y="${(Y(target) - 6).toFixed(1)}" text-anchor="end">Target ${target.toFixed(1)} kg</text>`;
   svg += `<polyline fill="none" stroke="${LINE}" stroke-width="2" stroke-linejoin="round" points="${ser.map(p => `${X(p.date).toFixed(1)},${Y(p.kg).toFixed(1)}`).join(' ')}"/>`;
@@ -2784,7 +2804,7 @@ ${text}
 Today is ${WEEKDAYS[t.getDay()]} ${iso(t)}, ${fmtClock(nowMin())}. The next two weeks:
 ${cal.join('\n')}
 
-Sections: "office" (their job; all work tasks), "study" (their studies: classes, assignments, exams, school admin), "career" (job search, applications, interviews, certifications), "health" (body, food, sleep, workouts, their cat Bishop's health), "else" (home, errands, money, family, friends).
+Sections: "office" (their job; all work tasks), "study" (their studies: classes, assignments, exams, school admin), "career" (job search, applications, interviews, certifications), "health" (body, food, sleep, workouts, their cat Mochi's health), "else" (home, errands, money, family, friends).
 What matters most to them, in order: ${prioText()}.
 
 Their open tasks (id | title | section | due | priority):
@@ -2803,7 +2823,7 @@ Each change is one of:
 {"op":"add_habit","name":"...","every":1,"time":"HH:MM or null"}
 {"op":"remove_habit","id":"..."}
 {"op":"log_weight","kg":72.4} their own weight
-{"op":"log_pet_weight","kg":4.8} their cat Bishop's weight
+{"op":"log_pet_weight","kg":4.8} their cat Mochi's weight
 Rules: use ids only from the lists above, never invent one. Match what they say to existing tasks by meaning, even when the transcription garbles names. Split separate things into separate tasks. Keep their words in titles, short and actionable. Use the calendar for dates ("tomorrow", "Friday", "this weekend" means Saturday). minutes is one of 5, 10, 15, 20, 30, 45, 60, 90, 120, 180, 240. slot is morning, afternoon, evening or night. Do not change anything they did not mention. If nothing should change, return an empty list.`;
 }
 function talkPlan(r) {
@@ -2842,7 +2862,7 @@ function talkPlan(r) {
     } else if (op === 'log_weight' && Number(c.kg) > 25 && Number(c.kg) < 300) {
       out.push({ kind: 'weight', label: 'Weight', text: `${Number(c.kg).toFixed(1)} kg`, detail: 'Your weigh-in for today', kg: Math.round(Number(c.kg) * 10) / 10 });
     } else if (op === 'log_pet_weight' && Number(c.kg) > 0.3 && Number(c.kg) < 30) {
-      out.push({ kind: 'pet', label: 'Bishop', text: `${Number(c.kg).toFixed(2)} kg`, detail: "Bishop's weigh-in for today", kg: Math.round(Number(c.kg) * 100) / 100 });
+      out.push({ kind: 'pet', label: 'Mochi', text: `${Number(c.kg).toFixed(2)} kg`, detail: "Mochi's weigh-in for today", kg: Math.round(Number(c.kg) * 100) / 100 });
     }
   }
   return { reply: str(r.reply, 240), changes: out };
@@ -2992,9 +3012,9 @@ function renderSheet() {
   if (x.why) kids.push(h('p', { class: 'sh-why', text: x.why }));
   if (gl) kids.push(h('div', { class: 'sh-ctx' }, h('span', { class: 'muted', html: spr('map', 1) + ' Milestone of' }), h('button', { type: 'button', class: 'linkbtn', text: gl.title, onclick: () => { closeSheet(false); setTab('journey'); } })));
   const box = h('section', { class: 'sh-box', 'aria-label': 'Steps' },
-    h('div', { class: 'spread' }, h('h3', { class: 'sh-h', html: spr('whiskey', 2) + ' STEPS' }), steps.length ? h('span', { class: 'muted', text: `${nd} of ${steps.length} done${left.length ? ` · ${fmtMin(sumMin(left))} left` : ''}` }) : null));
+    h('div', { class: 'spread' }, h('h3', { class: 'sh-h', html: spr('maple', 2) + ' STEPS' }), steps.length ? h('span', { class: 'muted', text: `${nd} of ${steps.length} done${left.length ? ` · ${fmtMin(sumMin(left))} left` : ''}` }) : null));
   if (steps.length) box.append(h('div', { class: 'gbar', style: 'height:10px' }, h('span', { style: `width:${Math.round((nd / steps.length) * 100)}%` })));
-  if (busy) box.append(h('div', { class: 'sh-busy', role: 'status' }, h('span', { class: 'blink' }), h('span', {}, 'Whiskey is breaking ', h('b', { text: `“${x.title}”` }), ' into small steps…')));
+  if (busy) box.append(h('div', { class: 'sh-busy', role: 'status' }, h('span', { class: 'blink' }), h('span', {}, 'Maple is breaking ', h('b', { text: `“${x.title}”` }), ' into small steps…')));
   if (steps.length) {
     const ol = h('ol', { class: 'sh-list' });
     steps.forEach((st, i) => {
@@ -3007,15 +3027,15 @@ function renderSheet() {
     });
     box.append(ol);
   } else if (!busy) {
-    box.append(h('div', { class: 'sh-empty' }, h('p', { text: 'Feels too big to start? Whiskey can split it into 3 to 5 small steps, or add your own below.' }),
-      h('button', { type: 'button', class: 'mc', html: spr('whiskey', 2) + ' Whiskey: break it into small steps', onclick: () => whiskeyBreak(x.id) })));
+    box.append(h('div', { class: 'sh-empty' }, h('p', { text: 'Feels too big to start? Maple can split it into 3 to 5 small steps, or add your own below.' }),
+      h('button', { type: 'button', class: 'mc', html: spr('maple', 2) + ' Maple: break it into small steps', onclick: () => mapleBreak(x.id) })));
   }
   const fid = 'sheetAdd-' + x.id;
   box.append(h('form', { class: 'sh-add', onsubmit: e => { e.preventDefault(); const v = S.drafts[fid] || ''; delete S.drafts[fid]; if (v.trim()) addStep(x, v); else render(); requestAnimationFrame(() => { const i = document.getElementById(fid); if (i) i.focus(); }); } },
     draftField('input', fid, '', { class: 'input', type: 'text', maxlength: '200', placeholder: steps.length ? 'Add another step' : 'Add a step', 'aria-label': 'Add a step' }),
     h('button', { type: 'submit', class: 'mc sm', text: 'Add' })));
   if (steps.length && !x.done) box.append(h('p', { class: 'muted', style: 'margin:0;font-size:.9rem', text: 'Steps show on your Today board one by one. When the last one is done, this task completes itself.' }));
-  if (steps.length && !busy && !x.done && left.length) box.append(h('div', {}, h('button', { type: 'button', class: 'mc sm', html: spr('whiskey', 2) + ' Ask Whiskey for more steps', onclick: () => whiskeyBreak(x.id) })));
+  if (steps.length && !busy && !x.done && left.length) box.append(h('div', {}, h('button', { type: 'button', class: 'mc sm', html: spr('maple', 2) + ' Ask Maple for more steps', onclick: () => mapleBreak(x.id) })));
   kids.push(box);
   const doneBtn = h('button', { type: 'button', class: `mc${x.done ? '' : ' green'}`, text: x.done ? 'Mark as not done' : left.length ? `Done! (finishes ${left.length} step${left.length > 1 ? 's' : ''})` : 'Done!' });
   doneBtn.addEventListener('click', () => { if (x.done) { beep(SND.undo); write('tasks', x.id, 'update', { done: false, doneAt: null, ...(x.archived ? { archived: false } : {}) }); } else { reward(doneBtn, taskXP(x), true); crewCheer(true); finishTask(x.id); setTimeout(() => closeSheet(), 450); } });
@@ -3094,8 +3114,8 @@ function taskRow(x, tIso) {
       h('button', { type: 'button', class: 'tag', 'data-pop': x.id + ':time', 'aria-haspopup': 'dialog', 'aria-expanded': 'false', title: 'Change time estimate', text: fmtMin(x.minutes), onclick: e => openTimePop(e.currentTarget, x.id) }),
       sorting ? h('span', { class: 'tag sorting' }, h('span', { class: 'blink' }), 'Claude is sorting') : null,
       x.example ? h('span', { class: 'tag ex', text: 'Example' }) : null,
-      x.parent && getTask(x.parent) ? h('button', { type: 'button', class: 'tag open', title: `Step of “${getTask(x.parent).title}”. Open it`, html: spr('whiskey', 1) + ` Step ${x.step || ''} of ${stepsOf(x.parent).length} · ${short(getTask(x.parent).title, 26)}`, onclick: () => openTask(x.id) }) : null,
-      S.breaking.has(x.id) ? h('span', { class: 'tag busy' }, h('span', { class: 'blink' }), 'Whiskey is breaking it down') : stepsOf(x.id).length ? h('button', { type: 'button', class: 'tag open', title: 'See all steps', html: spr('whiskey', 1) + ` ${stepsOf(x.id).filter(t => t.done).length}/${stepsOf(x.id).length} steps ›`, onclick: () => openTask(x.id) }) : null,
+      x.parent && getTask(x.parent) ? h('button', { type: 'button', class: 'tag open', title: `Step of “${getTask(x.parent).title}”. Open it`, html: spr('maple', 1) + ` Step ${x.step || ''} of ${stepsOf(x.parent).length} · ${short(getTask(x.parent).title, 26)}`, onclick: () => openTask(x.id) }) : null,
+      S.breaking.has(x.id) ? h('span', { class: 'tag busy' }, h('span', { class: 'blink' }), 'Maple is breaking it down') : stepsOf(x.id).length ? h('button', { type: 'button', class: 'tag open', title: 'See all steps', html: spr('maple', 1) + ` ${stepsOf(x.id).filter(t => t.done).length}/${stepsOf(x.id).length} steps ›`, onclick: () => openTask(x.id) }) : null,
       x.goal && getGoal(x.goal) ? h('span', { class: 'tag', title: `Milestone of: ${getGoal(x.goal).title}`, html: spr('map', 1) + ' Goal step' }) : null));
     if (x.why && !sorting) main.append(h('div', { class: 'why', text: x.why }));
   }
@@ -3151,7 +3171,7 @@ function renderFocus() {
   if (running) card.append(h('div', {}, h('div', { class: 'spread', style: 'margin-bottom:6px' }, h('b', { class: 'px', id: 'timerText', style: 'font-size:.8rem', text: '5:00' }), h('span', { class: 'muted', text: 'Just start. Five minutes is enough.' })), h('div', { class: 'timerbar' }, h('span', { id: 'timerBar', style: 'width:0%' }))));
   const doneBtn = h('button', { type: 'button', class: 'mc green', text: 'Done!' });
   doneBtn.addEventListener('click', () => { reward(doneBtn, taskXP(x), true); stopTimer(); setTimeout(() => { write('tasks', x.id, 'update', { done: true, doneAt: Date.now() }); afterTaskDone(x.id); }, 320); });
-  if (!x.parent && !x.split) card.append(h('div', {}, h('button', { type: 'button', class: 'mc sm', style: 'max-width:100%;white-space:normal;text-align:left', html: spr('whiskey', 2) + ' Whiskey: break it into small steps', onclick: () => whiskeyBreak(x.id) })));
+  if (!x.parent && !x.split) card.append(h('div', {}, h('button', { type: 'button', class: 'mc sm', style: 'max-width:100%;white-space:normal;text-align:left', html: spr('maple', 2) + ' Maple: break it into small steps', onclick: () => mapleBreak(x.id) })));
   card.append(h('div', { class: 'row' }, doneBtn, running ? h('button', { type: 'button', class: 'mc', text: 'Stop timer', onclick: () => { stopTimer(); render(); } }) : h('button', { type: 'button', class: 'mc', text: 'Start a 5-min warm-up', onclick: () => startTimer(x.id) }), h('button', { type: 'button', class: 'mc ghost', text: 'Not now', onclick: () => { S.skip.add(x.id); if (running) stopTimer(); render(); } })));
   host.append(card);
   if (running) tickTimer();
@@ -3868,7 +3888,7 @@ function seedDemo() {
     { id: 'd_t1', title: 'Finish the marketing case study', due: d(0), priority: 1, minutes: 90, area: 'study', slot: 'morning', done: false, createdAt: now - 9e6, status: 'ai', why: 'Due Thursday; big piece of work' },
     { id: 'd_t2', title: 'Send my application to Northwind Consulting', due: d(0), priority: 1, minutes: 45, area: 'career', slot: 'afternoon', done: false, createdAt: now - 8e6, status: 'ai', why: 'Career comes first; closes Friday' },
     { id: 'd_t3', title: 'Reply to the project email', due: d(0), priority: 2, minutes: 10, area: 'office', slot: 'afternoon', done: true, doneAt: now - 36e5, createdAt: now - 7e6, status: 'ai' },
-    { id: 'd_t4', title: 'Buy cat food for Bishop', due: d(0), priority: 2, minutes: 20, area: 'else', slot: 'evening', done: false, createdAt: now - 6e6, status: 'ai' },
+    { id: 'd_t4', title: 'Buy cat food for Mochi', due: d(0), priority: 2, minutes: 20, area: 'else', slot: 'evening', done: false, createdAt: now - 6e6, status: 'ai' },
     { id: 'd_t5', title: "Prepare slides for Monday's team meeting", due: d(1), priority: 2, minutes: 60, area: 'office', slot: 'morning', done: false, createdAt: now - 5e6, status: 'ai' },
     { id: 'd_t6', title: 'Book a dentist appointment', due: d(2), priority: 2, minutes: 15, area: 'health', done: false, createdAt: now - 4e6, status: 'ai' },
     { id: 'd_t7', title: 'Update my LinkedIn headline', due: d(3), priority: 3, minutes: 20, area: 'career', done: false, createdAt: now - 3e6, status: 'ai' },
@@ -3878,7 +3898,7 @@ function seedDemo() {
     { id: 'd_h1', name: 'Wake up at 7 am', createdDay: d(-30), done: hist(1) },
     { id: 'd_h2', name: 'Drink water at 9 am', createdDay: d(-30), done: hist(2) },
     { id: 'd_h3', name: 'Walk the dogs at 8 am', createdDay: d(-30), done: hist(3) },
-    { id: 'd_h4', name: 'Play with Bishop at 7 pm', createdDay: d(-30), done: hist(4) },
+    { id: 'd_h4', name: 'Play with Mochi at 7 pm', createdDay: d(-30), done: hist(4) },
     { id: 'd_h5', name: 'Read 20 minutes at 9 pm', createdDay: d(-30), done: hist(5) },
     { id: 'd_h6', name: 'Vacuum every 3 days', createdDay: d(-30), every: 3, done: hist(6, 3) }
   ];
@@ -3894,7 +3914,7 @@ function seedDemo() {
   ];
   S.petweights = [[-92, 4.62], [-61, 4.71], [-30, 4.83], [-2, 4.9]].map(([n, kg]) => ({ id: d(n), date: d(n), kg, at: now }));
   S.weights = []; S.days = [];
-  S.settings = { ...S.settings, bishopTargetKg: 4.6, vision: 'In a year I am fit, calm, and working in a role I love.', plan: { jobBy: d(75), appsPerWeek: 5, weights: [] }, noAutoFollow: true };
+  S.settings = { ...S.settings, mochiTargetKg: 4.6, vision: 'In a year I am fit, calm, and working in a role I love.', plan: { jobBy: d(75), appsPerWeek: 5, weights: [] }, noAutoFollow: true };
   demoSave(); render();
 }
 let onbStep = 0, onbMsg = null;
@@ -3909,10 +3929,10 @@ function renderOnb() {
     for (let x = 0; x < 100; x++) { g.fillStyle = x % 2 ? '#5DA130' : '#4E8E27'; g.fillRect(x, 52, 1, 4); }
     drawCrew(g, 50, 52, 0.45);
     const row = (key, label) => h('div', { class: 'swrow', role: 'group', 'aria-label': label }, h('span', { class: 'label', text: label }),
-      AV_OPTS[key].map(([c, name]) => h('button', { type: 'button', class: 'swatch', style: `background:${c}`, 'aria-pressed': String(A[key] === c), 'aria-label': `${label}: ${name}`, title: name, onclick: () => { saveSettings({ avatar: { ...avatar(), [key]: c } }); renderOnb(); } })));
+      AV_OPTS[key].map(([c, name]) => h('button', { type: 'button', class: c === 'none' ? 'swatch none' : 'swatch', style: c === 'none' ? '' : `background:${c}`, 'aria-pressed': String(A[key] === c), 'aria-label': `${label}: ${name}`, title: name, onclick: () => { saveSettings({ avatar: { ...avatar(), [key]: c } }); renderOnb(); } })));
     P.replaceChildren(steps, h('h2', { id: 'onbTitle', text: 'Design your avatar' }),
       h('p', { class: 'lead', text: 'This is you in Daybook. Your cat rides on your head and two dogs walk with you. They cheer when you finish things.' }),
-      h('div', { class: 'preview' }, cv), row('skin', 'Skin'), row('hair', 'Hair'), row('frame', 'Glasses'), row('top', 'Jacket'),
+      h('div', { class: 'preview' }, cv), row('skin', 'Skin'), h('div', { class: 'swrow', role: 'group', 'aria-label': 'Hair style' }, h('span', { class: 'label', text: 'Hair style' }), AV_STYLES.map(([k, name]) => h('button', { type: 'button', class: 'mc sm', text: name, 'aria-pressed': String((A.style || 'short') === k), onclick: () => { saveSettings({ avatar: { ...avatar(), style: k } }); renderOnb(); } }))), row('hair', 'Hair colour'), row('frame', 'Glasses'), row('top', 'Jacket'),
       h('div', { class: 'row', style: 'justify-content:flex-end' }, h('button', { type: 'button', class: 'mc green', text: 'Next: connect a model', onclick: () => { onbStep = 1; onbMsg = null; renderOnb(); } })));
     return;
   }

@@ -1,6 +1,6 @@
 # Daybook
 
-An ADHD-friendly planner in pixel art. Type your tasks the way you think them, or just say them, and Claude sorts each one into a section, a day, a priority and a time of day. Habits, long-term goals, job applications and your cat's weight live in the same calm little world, with a cat on your head and two dogs who cheer when you finish things.
+An ADHD-friendly planner in pixel art. Type your tasks the way you think them, or just say them, and Claude sorts each one into a section, a day, a priority and a time of day. Habits, long-term goals, job applications and your cat's weight live in the same calm little world, with a cat called Mochi on your head and two dogs, Biscuit and Maple, who cheer when you finish things.
 
 This is a **public demo**. It ships with made-up sample data and runs entirely in your browser.
 
@@ -8,7 +8,7 @@ This is a **public demo**. It ships with made-up sample data and runs entirely i
 
 ## Try it
 
-**Online:** turn on GitHub Pages for this repository (Settings → Pages → Deploy from a branch → `main`, root), then open `https://namratabhatia21.github.io/Daybook/`.
+**Online:** turn on GitHub Pages for this repository (Settings → Pages → Deploy from a branch → `main`, root), then open `https://<your-username>.github.io/Daybook/`.
 
 **Locally:**
 
@@ -33,18 +33,18 @@ You can change the model, remove the key, replay the intro or reset the demo any
 
 ## What's inside
 
-- **Today.** One "next up" task, a "3 of 7 done today" bar, filters by section, and a box that takes several tasks at once (one per line, or a list Claude splits up). Teddy fetches a quick win and Whiskey breaks a big task into small steps.
+- **Today.** One "next up" task, a "3 of 7 done today" bar, filters by section, and a box that takes several tasks at once (one per line, or a list Claude splits up). Biscuit fetches a quick win and Maple breaks a big task into small steps.
 - **Talk to Daybook.** Press **Talk** (or T) and say what changed: what you finished, what is not happening any more, what to add or move. Claude turns it into a list of changes (add, update, complete or remove tasks, add or remove habits, log a weigh-in) and nothing is saved until you tick the ones you want. One tap undoes the lot.
 - **Night check-in.** From 7 pm, a short check on your plan: on track or behind for each deadline (a new job, weight targets, habits this week), and what to do tomorrow to stay on plan. The verdicts are calculated from your data; Claude writes the words around them. If your last weigh-in is more than a week old, it says so instead of guessing your pace.
 - **Plan.** Every task by section, with search, priorities and a detail sheet with steps. Long-term goals with milestones on a road your character walks.
 - **Habits.** Daily or every few days, ordered by time of day, with streaks and a 12-week heatmap.
 - **Jobs.** A board from "want to apply" to "offer".
-- **Me.** Your weight, your cat's weight, your character, your plan deadlines, what matters most to you, and achievements.
+- **Me.** Your weight, your cat's weight, your character (skin, hair style and colour, glasses, jacket), your plan deadlines, what matters most to you, and achievements.
 - **Focus mode.** Freezes the pets and hides their chatter while you work (press F).
 
-| Talk to Daybook | Bishop's weight |
+| Talk to Daybook | Your cat's weight |
 |---|---|
-| ![Talk to Daybook](screenshots/7-talk.png) | ![Bishop's weight](screenshots/9-bishop.png) |
+| ![Talk to Daybook](screenshots/7-talk.png) | ![Your cat's weight](screenshots/9-cat-weight.png) |
 | **Night check-in** | **Plan** |
 | ![Night check-in](screenshots/8-night-check-in.png) | ![Tasks](screenshots/4-tasks.png) |
 | **Goals** | **Habits** |
@@ -61,7 +61,6 @@ Talk uses the browser's built-in speech recognition (Chrome, Edge and Safari). W
 - **AI by [Claude](https://www.anthropic.com/claude) from Anthropic.** Pick Claude Opus 5.5 (the default), Claude Sonnet 5.5 or Claude Haiku 5.5 during setup.
 - Calls go straight from your browser to `api.anthropic.com` through the official [Anthropic TypeScript SDK](https://github.com/anthropics/anthropic-sdk-typescript) (`@anthropic-ai/sdk` 0.135.0), bundled for the browser in `vendor/`. Requests use low effort, since the tasks are short. On Opus and Sonnet they also opt into server-side refusal fallbacks.
 - Without a key, a built-in quick parser sorts your tasks, and the night check-in uses a template.
-- Made by [@namratabhatia21](https://github.com/namratabhatia21).
 
 ## Privacy
 
